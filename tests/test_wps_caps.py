@@ -14,4 +14,5 @@ def test_wps_caps():
                             '/ows:Identifier')
     assert sorted(names.split()) == [
         'sleep',
+        'tropical_nights',
     ]
