@@ -1,5 +1,5 @@
 ECAS WPS Demo
-===============================
+=============
 
 .. image:: https://img.shields.io/badge/docs-latest-brightgreen.svg
    :target: http://ecas-wps-demo.readthedocs.io/en/latest/?badge=latest
@@ -18,10 +18,7 @@ ECAS WPS Demo
     :alt: Join the chat at https://gitter.im/bird-house/birdhouse
 
 
-ECAS WPS Demo (the bird)
-  *ECAS WPS Demo is a bird ...*
-
-A Web Processing Service for the ECAS System.
+A Web Processing Service for the ECASLab_ to provide a climate analytic service using Ophidia_.
 
 * Free software: Apache Software License 2.0
 * Documentation: https://ecas-wps-demo.readthedocs.io.
@@ -33,3 +30,5 @@ This package was created with Cookiecutter_ and the `bird-house/cookiecutter-bir
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`bird-house/cookiecutter-birdhouse`: https://github.com/bird-house/cookiecutter-birdhouse
+.. _ECASLab: https://ecaslab.dkrz.de/home.html
+.. _Ophidia: http://ophidia.cmcc.it/
