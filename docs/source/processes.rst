@@ -14,16 +14,11 @@ Sleep
    :docstring:
    :skiplines: 1
 
-Wordcounter
------------
+.. _index_tn:
 
-.. autoprocess:: ecaswps.processes.wps_wordcounter.WordCounter
-   :docstring:
-   :skiplines: 1
+TropicalNights
+--------------
 
-InOut
------
-
-.. autoprocess:: ecaswps.processes.wps_inout.InOut
+.. autoprocess:: ecaswps.processes.wps_index_tn.TropicalNights
    :docstring:
    :skiplines: 1

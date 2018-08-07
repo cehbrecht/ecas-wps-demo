@@ -10,5 +10,7 @@ dependencies:
 - psutil
 # ophidia
 - pyophidia
-- numpy
+# plot
 - cartopy
+- matplotlib
+- basemap
