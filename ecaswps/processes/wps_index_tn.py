@@ -1,11 +1,9 @@
 import os
-import tempfile
 from pywps import Process, LiteralInput, ComplexOutput
 from pywps import Format
 from pywps.app.Common import Metadata
 
 from ecaswps import util
-
 
 # ALLOWED_VALUES = {
 #     'model':
@@ -74,8 +72,7 @@ class TropicalNights(Process):
         from ecaswps.toolbox import tropical_nights
         response.update_status('Calculting TN ...', 0)
         # output in workdir
-        # output_filename = os.path.join(self.workdir, 'output.png')
-        _, output_filename = tempfile.mkstemp(suffix=".png", prefix="output-")
+        output_filename = os.path.join(self.workdir, 'tn_plot.png')
         # start TN
         tropical_nights(
             dataset=request.inputs['dataset'][0].data,

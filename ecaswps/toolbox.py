@@ -16,7 +16,7 @@ def tropical_nights(dataset, output):
         password=configuration.get_config_value('ophidia', 'password'),
         server=configuration.get_config_value('ophidia', 'server'),
         port=configuration.get_config_value('ophidia', 'port'))
-    # # Import source data (minimum temperature °K)
+    # Import source data (minimum temperature K)
     mintemp = cube.Cube(
         src_path=dataset,
         measure='temp2',
@@ -38,7 +38,7 @@ def tropical_nights(dataset, output):
         dim='time',
         concept_level='y',
     )
-    # # Plot the result
+    # Plot the result
     firstyear = count.subset(subset_filter=1, subset_dims='time')
     data = firstyear.export_array(show_time='yes')
     lats = data['dimension'][0]['values'][:]
