@@ -81,7 +81,7 @@ class TropicalNights(Process):
         output_filename = os.path.join(self.workdir, 'tn_plot.png')
         # start TN
         tropical_nights(
-            dataset=request.inputs['dataset'][0].data,
+            dataset=dataset,
             output=output_filename)
         # store result
         response.outputs['output'].file = output_filename
