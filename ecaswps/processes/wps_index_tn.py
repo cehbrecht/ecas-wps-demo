@@ -23,7 +23,8 @@ class TropicalNights(Process):
     def __init__(self):
         inputs = [
             LiteralInput('dataset', 'Dataset',
-                         data_type='string'),
+                         data_type='string',
+                         default='/usr/local/ophidia/ECAS/data/repository/E63_kp40_198001_199012_T2m_daymin_merged.nc'),
             # LiteralInput('model', 'Model',
             #              default='HadGEM2-ES', data_type='string',
             #              allowed_values=ALLOWED_VALUES['model']),
@@ -71,11 +72,16 @@ class TropicalNights(Process):
     def _handler(self, request, response):
         from ecaswps.toolbox import tropical_nights
         response.update_status('Calculting TN ...', 0)
+        # input dataset
+        if 'dataset' in request.inputs:
+            dataset = request.inputs['dataset'][0].data
+        else:
+            dataset = '/usr/local/ophidia/ECAS/data/repository/E63_kp40_198001_199012_T2m_daymin_merged.nc'
         # output in workdir
         output_filename = os.path.join(self.workdir, 'tn_plot.png')
         # start TN
         tropical_nights(
-            dataset=request.inputs['dataset'][0].data,
+            dataset=dataset,
             output=output_filename)
         # store result
         response.outputs['output'].file = output_filename
