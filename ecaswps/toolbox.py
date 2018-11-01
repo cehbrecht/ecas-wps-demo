@@ -1,3 +1,5 @@
+import tempfile
+
 from PyOphidia import cube
 
 import matplotlib
@@ -5,12 +7,14 @@ matplotlib.use('agg')
 import matplotlib.pyplot as plt
 from mpl_toolkits.basemap import Basemap
 import cartopy.crs as ccrs
+from cartopy import config
 import numpy as np
 
 from pywps import configuration
 
 
-def tropical_nights(dataset, output):
+def tropical_nights(dataset, output, workdir=None):
+    workdir = workdir or tempfile.gettempdir()
     cube.Cube.setclient(
         username=configuration.get_config_value('ophidia', 'username'),
         password=configuration.get_config_value('ophidia', 'password'),
@@ -48,6 +52,7 @@ def tropical_nights(dataset, output):
     clevs = np.arange(0, 371, 10)
 
     def _cartopy_plot():
+        config['data_dir'] = workdir
         ax = plt.axes(projection=ccrs.PlateCarree())
         ax.coastlines()
         ax.set_global()

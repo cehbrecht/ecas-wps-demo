@@ -82,7 +82,8 @@ class TropicalNights(Process):
         # start TN
         tropical_nights(
             dataset=dataset,
-            output=output_filename)
+            output=output_filename,
+            workdir=self.workdir)
         # store result
         response.outputs['output'].file = output_filename
         # done
